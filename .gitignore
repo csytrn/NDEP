@@ -1,0 +1,8 @@
+.DS_Store
+
+in_json/
+in_xlsx/
+out/
+tests_out/
+
+node_modules/
