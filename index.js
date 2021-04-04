@@ -2,7 +2,7 @@
 |* START OF PROGRAM SETTINGS *|
 \*****************************/
 // List of years and/or intervals to process (e.g. [1996, "1998-2004", 2011])
-const yrsInput = ["1996-1998"];
+const yrsInput = [];
 // Data input/output directories (must end with a forward slash)
 const inDir = "./data/in/", outDir = "./data/out/";
 /**
