@@ -1,15 +1,24 @@
 {
-  "name": "dust-internship",
+  "name": "ndep",
   "version": "1.0.0",
-  "description": "",
-  "main": "./backend/dust_processing/index.js",
+  "description": "NWS Dust Event Processor, code written for a UMD research project during Summer 2019",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jt4517/NDEP.git"
+  },
+  "author": "Jeffrey Tong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jt4517/NDEP/issues"
+  },
+  "homepage": "https://github.com/jt4517/NDEP#readme",
   "dependencies": {
-    "fs": "0.0.1-security",
-    "xlsx": "^0.14.3"
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "fs": "*"
   }
 }
