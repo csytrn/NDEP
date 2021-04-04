@@ -11,7 +11,7 @@ The NWS Dust Event Processor (NDEP) processes data files from the [Storm Events 
 	- `DEATHS_DIRECT` and `DEATHS_INDIRECT` are added to create a new `DEATHS_OVERALL` column.
 	- `DAMAGE_PROPERTY` and `DAMAGE_CROPS` are added to create a new `DAMAGE_OVERALL` column.
 - **Episode grouping:** By combining events with the same `EPISODE_ID`, an episodes data file is also produced.
-	- For all columns of events, if there is exactly 1 unique nonempty value in that column among the episode's events, that value will be transferred to the episode. If there are no nonempty values, the column remains empty for the episode; if there are multiple unique nonempty values, the column's value will be marked `(Multiple values)`.
+	- For all columns of events, if there is exactly 1 unique nonempty value in that column among the episode's events, that value will be transferred to the episode. If there are no nonempty values, the column remains empty for the episode; if there are multiple unique nonempty values, the column's value will be marked `[Multiple values]`.
 	- All `EVENT_ID` values for the episode's events are listed in a new `EVENT_IDS` column.
 	- Each loss column for the episode's events is summed to create new corresponding episode columns (e.g. `INJURIES_DIRECT` is summed over the events to create `EPISODE_INJURIES_DIRECT`.)
 - **CSV I/O:** NDEP reads and writes storm event and storm episode data in .csv files.

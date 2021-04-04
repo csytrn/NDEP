@@ -2,7 +2,7 @@
 |* START OF PROGRAM SETTINGS *|
 \*****************************/
 // List of years and/or intervals to process (e.g. [1996, "1998-2004", 2011])
-const yrsInput = [];
+const yrsInput = ["1996-1998"];
 // Data input/output directories (must end with a forward slash)
 const inDir = "./data/in/", outDir = "./data/out/";
 /**
@@ -28,7 +28,7 @@ const SEDNameFormat = "SED-YYYY.csv";
  * - TWD (Thunderstorm Wind and Dust): The event must pass both the TW and DO filters.
  * - HTWD (High/Thunderstorm Wind and Dust): The event must pass either the HWD or TWD filters.
  */
-const filter = "A";
+const filter = "PE";
 /***************************\
 |* END OF PROGRAM SETTINGS *|
 \***************************/
@@ -266,11 +266,11 @@ function processSEDCsv (file) {
 					episode = yrEpisodes[event.EPISODE_ID] = Object.assign(event, {EVENT_IDS: event.EVENT_ID});
 					EPISODE_LOSS_HEADERS_ALL.forEach(key => episode[key] = 0);
 				} else {
-					episode.EVENT_IDS += "," + event.EVENT_ID;
+					episode.EVENT_IDS += ", " + event.EVENT_ID;
 					Object.keys(event).forEach(key => {
 						if (episode[key] == undefined) episode[key] = event[key];
 						else if (event[key] != undefined && event[key] != episode[key])
-							episode[key] = "(Multiple values)";
+							episode[key] = "[Multiple values]";
 					});
 				}
 				LOSS_HEADERS_ALL.forEach(key => episode["EPISODE_" + key] += event[key]);
